@@ -96,13 +96,14 @@ developed to fill gaps I've found.
 Use an IDE, okay?
 
 * IDE
-    * [Komodo IDE](http://www.activestate.com/komodo-ide) - Commercial IDE for Python, JavaScript, HTML, XML, CSS, Ruby, Go, Perl.... Everything in one place.
-    * [PyCharm](https://www.jetbrains.com/pycharm/) - Commercial Python IDE by JetBrains. Has free community edition available.
+    * [Komodo IDE](http://www.activestate.com/komodo-ide) - Commercial IDE for Python, JavaScript, HTML, XML, CSS, Ruby, Go, Perl.... Everything in one place. My primary development tool.
+    * [PyCharm](https://www.jetbrains.com/pycharm/) - Commercial Python IDE by JetBrains. Has free community edition available. I use it only occasionally, but my students use it often. Excellent value inspector in the debugger.
 
 ## Functional Programming
 
 *Functional Programming with Python.*
 
+* `itertools` from the standard library - Perhaps not strictly functional, but related. Wish that some of the generators given as cookbook recopies were actually implemented in the library. Complex problems often made simple through proper use of itertools.
 * [funcy](https://github.com/Suor/funcy) - A fancy and practical functional tools.
 * [Toolz](https://github.com/pytoolz/toolz) - A collection of functional utilities for iterators, functions, and dictionaries.
 
