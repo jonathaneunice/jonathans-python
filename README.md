@@ -114,7 +114,7 @@ Use an IDE, okay?
 
 ## Implementations
 
-* Python 3, not Python 2. It's time to migrate whole-heartedly. I have long supported Python 3 in my modules and with my students, but still often reached for the familiar  2.7 for my own work. No longer. Python 3.6 (released December 2016) is now the place to go if you have any choice in the matter. In addition to the superior handling of modern Unicode text (which is everywhere in a global economy) and other 'standard' features of Python 3, 3.6 adds template strings and orders `dict` keys, fixing ugly "Why?! Why does Python not do this yet?!" glitches. 3.6 is the Python 3 we deserve.
+* Python 3, not Python 2. It's time to migrate whole-heartedly. I have long supported Python 3 in my modules and with my students, but still often reached for the familiar  2.7 for my own work. No longer. Python 3.6 (released December 2016) is now the place to go if you have any choice in the matter. In addition to the superior handling of modern Unicode text (which is everywhere in a global economy) and other 'standard' features of Python 3, 3.6 adds template strings and orders `dict` keys, fixing ugly "Why?! Why does Python not do this yet?!" glitches. 3.6 is both the Python 3 we need and the Python 3 we deserve.
 * CPython, aka the standard, C-based implementation of Python you'd get from [python.org](https://www.python.org/) and other source. The Gold Standard and generally best place to run Python code.
 * [Jython](https://hg.python.org/jython) - Implementation of Python programming language written in Java for the Java virtual machine (JVM). I used to test all my libraries against Jython and to be hopeful for a JVM-resident Python, but my hopes for it have dimmed over time. Development is slow and the versions are back-level vs. standard CPython. It also doesn't easily support C-implemented libraries like `lxml` and `numpy` which are essential to much of my code. The standard execution environment now seems to be Linux-in-the-cloud, not JVM. Time marches on. Still, love it as an old fling.
 * [PyPy](https://bitbucket.org/pypy/pypy) - Accelerated JIT implementation of Python. Good currency with CPython. I test and certify all my code against PyPy, and occasionally use it when CPython isn't fast enough.
@@ -190,11 +190,12 @@ See also: [List of Python API Wrappers and Libraries](https://github.com/realpyt
 
 ## Web Frameworks
 
-* [Django](https://www.djangoproject.com/) - The most popular web framework in Python.
-    * [awesome-django](https://github.com/rosarior/awesome-django)
-* [Flask](http://flask.pocoo.org/) - A microframework for Python.
+* [Flask](http://flask.pocoo.org/) - A "microframework," which I presume means "simple enough for mere motals." Extraordinarily good combintation of simplicity, logical APIs, performance, extensibility, and community support. Admin dashboards, social logins, and pretty much anything you could want to do in a Python web app, you can do with a Flask server and its add-on modules.
     * [awesome-flask](https://github.com/humiaozuzu/awesome-flask)
-* [Tornado](http://www.tornadoweb.org/en/latest/) - A Web framework and asynchronous networking library.
+* [Django](https://www.djangoproject.com/) - The Big Bog web framework in Python. Opinionated and highly structured. You *will* use very specific MVC components and follow its recommended path. Doubly so if you also operate a REST API or other systematic modules. Deployments can grow intricate to the point of Byzantine. Too many "guts exposed" places to recommend it as a first framework. "Steep" doesn't begin to describe its full-stack learning curve. OTOH, it has a vast number of strong supporting modules, a large development community, and strong outcomes. A backup option should Flask not suit, e.g. for large-scale, highly-internationalized, highly-structured sites. But having run it in production web, I must warn: its complexity comes at a substantive development, testing, optimization, and operational complexity cost. If it were a ski course, its simplest parts would be the intermediate paths; many activities are black diamond and double black diamond rated.
+    * [awesome-django](https://github.com/rosarior/awesome-django)
+
+* [Tornado](http://www.tornadoweb.org/en/latest/) - A Web framework and asynchronous networking library. Includes some of the core scheduling features usually implemented by nginx or other web servers. Strong foundation for highly async operations, e.g. WebSockets. Prefer to Twisted.
 * Avoid [Bottle](http://bottlepy.org/docs/dev/index.html), [CherryPy](http://www.cherrypy.org/), [Pyramid](http://www.pylonsproject.org/), [TurboGears](http://www.turbogears.org/), [Web2py](http://www.web2py.com/), Twisted. IMO, time has passed these by. I do not see the energy, community, or speed of development in these that I do in Flask, Django, and Tornado.
 
 # Services
