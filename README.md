@@ -195,24 +195,14 @@ imporve your code quality more than solid testing. Nothing.
     * [ftfy](https://github.com/LuminosoInsight/python-ftfy) - Makes Unicode text less broken and more consistent automagically.
     * [fuzzywuzzy](https://github.com/seatgeek/fuzzywuzzy) - Fuzzy String Matching.
     * [Levenshtein](https://github.com/ztane/python-Levenshtein/) - Fast computation of Levenshtein distance and string similarity.
-    * [pangu.py](https://github.com/vinta/pangu.py) - Spacing texts for CJK and alphanumerics.
-    * [pyfiglet](https://github.com/pwaller/pyfiglet) - An implementation of figlet written in Python.
-    * [shortuuid](https://github.com/stochastic-technologies/shortuuid) - A generator library for concise, unambiguous and URL-safe UUIDs.
-    * [unidecode](https://pypi.python.org/pypi/Unidecode) - ASCII transliterations of Unicode text.
-    * [uniout](https://github.com/moskytw/uniout) - Print readable chars instead of the escaped string.
-    * [xpinyin](https://github.com/lxneng/xpinyin) - A library to translate Chinese hanzi (漢字) to pinyin (拼音).
+
 * Slugify
-    * [awesome-slugify](https://github.com/dimka665/awesome-slugify) - A Python slugify library that can preserve unicode.
-    * [python-slugify](https://github.com/un33k/python-slugify) - A Python slugify library that translates unicode to ASCII.
-    * [unicode-slugify](https://github.com/mozilla/unicode-slugify) - A slugifier that generates unicode slugs with Django as a dependency.
+     * [python-slugify](https://github.com/un33k/python-slugify) - A Python slugify library that translates unicode to ASCII.
+
 * Parser
-    * [phonenumbers](https://github.com/daviddrysdale/python-phonenumbers) - Parsing, formatting, storing and validating international phone numbers.
-    * [PLY](http://www.dabeaz.com/ply/) - Implementation of lex and yacc parsing tools for Python
-    * [Pygments](http://pygments.org/) - A generic syntax highlighter.
-    * [pyparsing](http://pyparsing.wikispaces.com/) - A general purpose framework for generating parsers.
-    * [python-nameparser](https://github.com/derek73/python-nameparser) - Parsing human names into their individual components.
-    * [python-user-agents](https://github.com/selwin/python-user-agents) - Browser user agent parser.
-    * [sqlparse](https://github.com/andialbrecht/sqlparse) - A non-validating SQL parser.
+
+    * [Pygments](http://pygments.org/) - Polyglot syntax highlighter. Seems to support all the languaes.
+    * [pyparsing](http://pyparsing.wikispaces.com/) - General purpose framework for generating parsers.
 
 ## Third-party APIs
 
@@ -223,7 +213,7 @@ imporve your code quality more than solid testing. Nothing.
 
 ## Web Frameworks
 
-*Full stack web frameworks.*
+*Full stack web frameworks. In other words, Web servers in Python.*
 
 * [Django](https://www.djangoproject.com/) - The most popular web framework in Python.
     * [awesome-django](https://github.com/rosarior/awesome-django)
