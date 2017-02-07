@@ -114,14 +114,18 @@ Use an IDE, okay?
 
 ## Implementations
 
+* Python 3, not Python 2. It's time to migrate whole-heartedly. I have long supported Python 3 in my modules and with my students, but still often reached for the familiar  2.7 for my own work. No longer. Python 3.6 (released December 2016) is now the place to go if you have any choice in the matter. In addition to the superior handling of modern Unicode text (which is everywhere in a global economy) and other 'standard' features of Python 3, 3.6 adds template strings and orders `dict` keys, fixing ugly "Why?! Why does Python not do this yet?!" glitches. 3.6 is the Python 3 we deserve.
+* CPython, aka the standard, C-based implementation of Python you'd get from [python.org](https://www.python.org/) and other source. The Gold Standard and generally best place to run Python code.
 * [Jython](https://hg.python.org/jython) - Implementation of Python programming language written in Java for the Java virtual machine (JVM). I used to test all my libraries against Jython and to be hopeful for a JVM-resident Python, but my hopes for it have dimmed over time. Development is slow and the versions are back-level vs. standard CPython. It also doesn't easily support C-implemented libraries like `lxml` and `numpy` which are essential to much of my code. The standard execution environment now seems to be Linux-in-the-cloud, not JVM. Time marches on. Still, love it as an old fling.
 * [PyPy](https://bitbucket.org/pypy/pypy) - Accelerated JIT implementation of Python. Good currency with CPython. I test and certify all my code against PyPy, and occasionally use it when CPython isn't fast enough.
 
 
+
 ## Interactive Interpreter
 
-* [bpython](https://github.com/bpython/bpython) - A better Python interpreter. Highly recommended. Friends don't let friend REPL.
-* [Jupyter Notebook (IPython)](https://jupyter.org) - A rich toolkit to help you make the most out of using Python interactively, including interactive documentation in Markdown and Latex math expressions. I spend at least half my Python development time in Jupyter Notebook / IPython. Also supports other langauges, such as JavaScript, Perl, .... Enthusiastically recommended.
+* [IPython](https://ipython.org/) - A better interactive Python interpreter. Friends don't let friend REPL. Use IPython instead.
+* `idle` and `idle3`. If you can't use IPython for interactive work, at least use the interactive IDLE interpreter.
+* [Jupyter Notebook (IPython)](https://jupyter.org) - Jupyter Notebook (fka IPython Notebook) is a web-based interactive tool. Write and run code, plus document it in Markdown and Latex math expressions. Also supports other languages, such as JavaScript, Perl.... I spend at least half my development time in Jupyter Notebook.  Enthusiastically recommended.
 
 
 ## Package Management
