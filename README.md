@@ -12,6 +12,11 @@ available tools. It is intentionally opinionated, giving negative reviews
 as well. It will also unabashedly include my own modules,
 developed to fill gaps I've found.
 
+Philosophy: You don't need N different libraries/frameworks to accomplish
+the same task. You need one really solid one that is your go-to, with
+some knowledge of (and possibly experience with) a few others as backups for
+specific requirements your primary tool may not nail.
+
 - [Jonathan's Python](#jonathans-python)
 
     - [Compatibility](#compatibility)
@@ -23,7 +28,7 @@ developed to fill gaps I've found.
     - [Documentation](#documentation)
     - [Editor Plugins and IDEs](#editor-plugins-and-ides)
     - [Functional Programming](#functional-programming)
-    - [HTML Manipulation](#html-manipulation)
+    - [HTML and XML Manipulation](#html-and-xml-manipulation)
     - [HTTP](#http)
     - [Imagery](#imagery)
     - [Implementations](#implementations)
@@ -41,35 +46,25 @@ developed to fill gaps I've found.
 
 ## Compatibility
 
-*Libraries for migrating from Python 2 to 3.*
-
 * [Six](https://pypi.python.org/pypi/six) - Python 2 and 3 compatibility utilities. This is my essential bridge between 2 and 3.
 
 
 ## Configuration
 
-*Libraries for storing and parsing configuration options.*
-
 * [options](https://pypi.python.org/pypi/options) - My own design. The most flexible manager of program, module, class, instance, method, and function options in any programming language, anywhere. By far.
 
 ## Data Analysis
-
-*Libraries for data analyzing.*
 
 * [NumPy](http://www.numpy.org/) - Essential library for optimized math in Python. API occasionally undisciplined in a way more often seen in PHP and C, but its results are exceptional.
 * [Pandas](http://pandas.pydata.org/) - Pandas' Series and DataFrames data structures add sophisticated indices, file I/O, and query and manipulation methods atop NumPy arrays. Like a spreadsheet in Python code. Steep-ish learning curve, but *so* worth it.
 
 ## Data Visualization
 
-*Libraries for visualizing, plotting, or displaying data. See also: [awesome-javascript](https://github.com/sorrycc/awesome-javascript#data-visualization).*
-
 * [Bokeh](https://github.com/bokeh/bokeh) - Marriage of d3.js and Python.
 * [Matplotlib](http://matplotlib.org/) - The essential/foundation Python plotting library. API(s) derive from MATLAB, R, etc. and can be undisciplined, but with a little tweaking, strong results possible. Easily saves output to PNG and SVG.
 
 
 ## Date and Time
-
-*Libraries for working with dates and times.*
 
 * [arrow](https://github.com/crsmithdev/arrow) - Better dates & times. Esp. helpful managing and adjusting for timezones, a task for which the standard `datetime` sucks like a Hoover.
 * [dateutil](https://github.com/dateutil/dateutil) - Extensions to the standard Python [datetime](https://docs.python.org/2/library/datetime.html) module. Especially good for parsing date strings, a task that is otherwise hard to accomplish in Python.
@@ -78,14 +73,10 @@ developed to fill gaps I've found.
 
 ## Debugging Tools
 
-*Libraries for debugging code.*
-
 * [show](https://pypi.python.org/pypi/show). My own design. Debug print statements done right.
 
 
 ## Documentation
-
-*Libraries for generating project documentation.*
 
 * [Sphinx](http://www.sphinx-doc.org/en/latest/) - Foundation Python Documentation generator. Both love and hate it. RST (ReStructured Text) is semantically more sophisticated than Markdown, but gratuitously different in numerous annoying ways. Markdown needs to be upgraded, and RST needs to be phased out in its favor. Until then, there's Sphinx and RST.
     * [awesome-sphinxdoc](https://github.com/yoloseem/awesome-sphinxdoc)
@@ -101,16 +92,12 @@ Use an IDE, okay?
 
 ## Functional Programming
 
-*Functional Programming with Python.*
-
 * `itertools` from the standard library - Perhaps not strictly functional, but related. Wish that some of the generators given as cookbook recopies were actually implemented in the library. Complex problems often made simple through proper use of itertools.
 * [funcy](https://github.com/Suor/funcy) - A fancy and practical functional tools.
 * [Toolz](https://github.com/pytoolz/toolz) - A collection of functional utilities for iterators, functions, and dictionaries.
 
 
-## HTML Manipulation
-
-*Libraries for working with HTML and XML.*
+## HTML and XML Manipulation
 
 * [lxml](http://lxml.de/) - Fast, versatile, powerful library for parsing and manipulating HTML and XML. Uses ElementTree API. Excellent XPath implementation. Very extensible.
 
@@ -118,20 +105,14 @@ Use an IDE, okay?
 
 ## HTTP
 
-*Libraries for working with HTTP.*
-
 * [requests](http://docs.python-requests.org/en/latest/) - HTTP Requests for Humans™. Much nicer than historical Python standard library approaches. Similar to the Arrow time/date library, markedly up-levels code.
 * [requests-cache](https://pypi.python.org/pypi/requests-cache) - A cache to use when developing code with  requests`. Don't make 46 identical requests; service hosts don't like that. Also, it's slow. Use a cache.
 
 ## Imagery
 
-*Libraries for manipulating images.*
-
 * [pillow](https://github.com/python-pillow/Pillow) - Pillow is the friendly [PIL](http://www.pythonware.com/products/pil/) fork. The essential Python image manipulation library.
 
 ## Implementations
-
-*Implementations of Python.*
 
 * [Jython](https://hg.python.org/jython) - Implementation of Python programming language written in Java for the Java virtual machine (JVM). I used to test all my libraries against Jython and to be hopeful for a JVM-resident Python, but my hopes for it have dimmed over time. Development is slow and the versions are back-level vs. standard CPython. It also doesn't easily support C-implemented libraries like `lxml` and `numpy` which are essential to much of my code. The standard execution environment now seems to be Linux-in-the-cloud, not JVM. Time marches on. Still, love it as an old fling.
 * [PyPy](https://bitbucket.org/pypy/pypy) - Accelerated JIT implementation of Python. Good currency with CPython. I test and certify all my code against PyPy, and occasionally use it when CPython isn't fast enough.
@@ -139,22 +120,18 @@ Use an IDE, okay?
 
 ## Interactive Interpreter
 
-*Interactive Python interpreters (REPL).*
-
 * [bpython](https://github.com/bpython/bpython) - A better Python interpreter. Highly recommended. Friends don't let friend REPL.
 * [Jupyter Notebook (IPython)](https://jupyter.org) - A rich toolkit to help you make the most out of using Python interactively, including interactive documentation in Markdown and Latex math expressions. I spend at least half my Python development time in Jupyter Notebook / IPython. Also supports other langauges, such as JavaScript, Perl, .... Enthusiastically recommended.
 
 
 ## Package Management
 
-*Libraries for package and dependency management.*
+* `pip` - best way to install modules for Python. You can also use more platform- or distribution-specific tools such as `conda` (Anaconda distribution) or a local OS installer (e.g. `brew` on macOS, `apt-get` or `yum` on Linux). Avoid `easy_install`.
 
 * [wheel](http://pythonwheels.com/) - The new standard of Python distribution and are intended to replace eggs. All my packages are built for wheel distribution.
 
 
 ## Specific Formats Processing
-
-*Libraries for parsing and manipulating specific text formats.*
 
 * General
     * [openpyxl](https://openpyxl.readthedocs.io/) - A library for reading and writing Excel 2010 xlsx/xlsm/xltx/xltm files.
@@ -167,8 +144,6 @@ Use an IDE, okay?
 
 
 ## Testing
-
-*Libraries for testing codebases and generating test data.*
 
 Testing is annoying and has a highish learning curve. But nothing will
 imporve your code quality more than solid testing. Nothing.
@@ -187,8 +162,6 @@ imporve your code quality more than solid testing. Nothing.
 
 ## Text Processing
 
-*Libraries for parsing and manipulating plain texts.*
-
 * General
     * [chardet](https://github.com/chardet/chardet) - Python 2/3 compatible character encoding detector.
     * [difflib](https://docs.python.org/2/library/difflib.html) - (Python standard library) Helpers for computing deltas.
@@ -206,14 +179,12 @@ imporve your code quality more than solid testing. Nothing.
 
 ## Third-party APIs
 
-*Libraries for accessing third party services APIs. See: [List of Python API Wrappers and Libraries](https://github.com/realpython/list-of-python-api-wrappers).*
+See also: [List of Python API Wrappers and Libraries](https://github.com/realpython/list-of-python-api-wrappers).
 
 * [boto3](https://github.com/boto/boto3) - Python interface to Amazon Web Services.
 * [gspread](https://github.com/burnash/gspread) - Google Spreadsheets Python API.
 
 ## Web Frameworks
-
-*Full stack web frameworks. In other words, Web servers in Python.*
 
 * [Django](https://www.djangoproject.com/) - The most popular web framework in Python.
     * [awesome-django](https://github.com/rosarior/awesome-django)
@@ -226,9 +197,13 @@ imporve your code quality more than solid testing. Nothing.
 
 Online tools and APIs to simplify development.
 
+* [PyPI](https://pypi.python.org/pypi) - The Python Package Index. Where you go to get add-on modules for Python. `pip` installs directly from there.
+* [Github](https://github.com) - Leading provider of Git-based source code control and related services. The hub of many developers' online development identity and experience.
+* [Bitbucket](https://bitbucket.org) - Alternative provider of Git and Mercurial (Hg) online repositories.
+
 ## Continuous Integration
 
-*See: [awesome-CIandCD](https://github.com/ciandcd/awesome-ciandcd#online-build-system).*
+*See also: [awesome-CIandCD](https://github.com/ciandcd/awesome-ciandcd#online-build-system).*
 
 * [CircleCI](https://circleci.com/) - A CI service that can run very fast parallel testing.
 * [Travis CI](https://travis-ci.org) - Popular CI service. Works well with open source  projects. (GitHub only)
