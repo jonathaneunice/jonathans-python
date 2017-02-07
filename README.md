@@ -57,9 +57,7 @@ developed to fill gaps I've found.
 *Libraries for data analyzing.*
 
 * [NumPy](http://www.numpy.org/) - Essential library for optimized math in Python. API occasionally undisciplined in a way more often seen in PHP and C, but its results are exceptional.
-* [Pandas](http://pandas.pydata.org/) - Pandas' Series and DataFrames data structures add sophisticated indices, file I/O, and query and manipulation methods atop NumPy arrays. Like a spreadsheet in Python code. Steepish learning curve, but *so* worth it.
-* [Pandas](http://pandas.pydata.org/) - Pandas' Series and DataFrames data structures add sophisticated indices, file I/O, and query and manipulation methods atop NumPy arrays. Like a spreadsheet in Python code. Steepish learning curve, but *so* worth it.
-
+* [Pandas](http://pandas.pydata.org/) - Pandas' Series and DataFrames data structures add sophisticated indices, file I/O, and query and manipulation methods atop NumPy arrays. Like a spreadsheet in Python code. Steep-ish learning curve, but *so* worth it.
 
 ## Data Visualization
 
@@ -152,23 +150,6 @@ Use an IDE, okay?
 
 * [wheel](http://pythonwheels.com/) - The new standard of Python distribution and are intended to replace eggs. All my packages are built for wheel distribution.
 
-## Package Repositories
-
-*Local PyPI repository server and proxies.*
-
-* [warehouse](https://github.com/pypa/warehouse) - Next generation Python Package Repository (PyPI).
-    * [Warehouse](https://pypi.org/)
-* [bandersnatch](https://bitbucket.org/pypa/bandersnatch) - PyPI mirroring tool provided by Python Packaging Authority (PyPA).
-* [devpi](http://doc.devpi.net/latest/) - PyPI server and packaging/testing/release tool.
-* [localshop](https://github.com/mvantellingen/localshop) - Local PyPI server (custom packages and auto-mirroring of pypi).
-
-## Permissions
-
-*Libraries that allow or deny users access to data or functionality.*
-
-* [Carteblanche](https://github.com/neuman/python-carteblanche/) - Module to align code with thoughts of users and designers. Also magically handles navigation and permissions.
-* [django-guardian](https://github.com/django-guardian/django-guardian) - Implementation of per object permissions for Django 1.2+
-* [django-rules](https://github.com/dfunckt/django-rules) - A tiny but powerful app providing object-level permissions to Django, without requiring a database.
 
 ## Specific Formats Processing
 
