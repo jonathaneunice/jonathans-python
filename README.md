@@ -6,6 +6,7 @@ And a few warnings away from others that are, IMHO, not so awesome.
 Inspired by, and often cribbed from,
 [Awesome Python](https://github.com/vinta/awesome-python).
 That list is far more comprehensive, terse, and invariably positive.
+
 This one, in contrast, only recommends tools I've personally used
 and love. It explains a bit more why I use these, as opposed to other
 available tools. It is intentionally opinionated, giving negative reviews
@@ -16,6 +17,9 @@ Philosophy: You don't need N different libraries/frameworks to accomplish
 the same task. You need one really solid one that is your go-to, with
 some knowledge of (and possibly experience with) a few others as backups for
 specific requirements your primary tool may not nail.
+
+Contributions to and recommendations for this list are welcome, but
+are strictly advisory.
 
 - [Jonathan's Python](#jonathans-python)
 
@@ -46,8 +50,11 @@ specific requirements your primary tool may not nail.
 
 ## Compatibility
 
-* [Six](https://pypi.python.org/pypi/six) - Python 2 and 3 compatibility utilities. This is my essential bridge between 2 and 3.
-
+* [Six](https://pypi.python.org/pypi/six) - Python 2 and 3 compatibility utilities.
+  This is has been my essential bridge between 2 and 3.
+  That said, nowadays you should *strongly* favor Python 3. All compatibility code
+  should key off Python 3 being the natural default environment, and Python 2 the
+  outlier. E.g. `if _PY2:` conditionals not `if _PY3:`.
 
 ## Configuration
 
@@ -61,7 +68,9 @@ specific requirements your primary tool may not nail.
 ## Data Visualization
 
 * [Bokeh](https://github.com/bokeh/bokeh) - Marriage of d3.js and Python.
-* [Matplotlib](http://matplotlib.org/) - The essential/foundation Python plotting library. API(s) derive from MATLAB, R, etc. and can be undisciplined, but with a little tweaking, strong results possible. Easily saves output to PNG and SVG.
+* [Matplotlib](http://matplotlib.org/) - The essential/foundation Python plotting
+  library. API(s) derive from MATLAB, R, etc. and can be undisciplined, but with a
+  little tweaking, strong results possible. Easily saves output to PNG and SVG.
 
 
 ## Date and Time
@@ -73,7 +82,8 @@ specific requirements your primary tool may not nail.
 
 ## Debugging Tools
 
-* [show](https://pypi.python.org/pypi/show). My own design. Debug print statements done right.
+* [show](https://pypi.python.org/pypi/show). My own design. Debug print statements
+  done right.
 
 
 ## Documentation
@@ -84,15 +94,38 @@ specific requirements your primary tool may not nail.
 
 ## Editor Plugins and IDEs
 
-Use an IDE, okay?
+Use an IDE, okay? `vi` and `emacs` are so 1985.
 
-* IDE
-    * [Komodo IDE](http://www.activestate.com/komodo-ide) - Commercial IDE for Python, JavaScript, HTML, XML, CSS, Ruby, Go, Perl.... Everything in one place. My primary development tool.
-    * [PyCharm](https://www.jetbrains.com/pycharm/) - Commercial Python IDE by JetBrains. Has free community edition available. I use it only occasionally, but my students use it often. Excellent value inspector in the debugger.
+* [Project Jupyter](http://jupyter.org/) - Project Jupyter and its generalization of
+  IPython notebooks to multiple languages and web UIs is
+  amazing. Completely transforms your programming experience,
+  I find more and more of my development time spent in Jupyter Notebooks,
+  then moved to IDEs.
+* [JupyterLab](https://github.com/jupyterlab) - JupyterLab is an extension to,
+  and the next generation of, Jupyter Notebook.
+  They say "very early pre-alpha developer preview" and "not ready for general usage yet."
+  Bullshit. Even in preview status, it's become my go-to development
+  place.
+* [Komodo IDE](http://www.activestate.com/komodo-ide) - Commercial IDE for Python,
+  JavaScript, HTML, XML, CSS, Ruby, Go, Perl.... Everything in one place. Has been my
+  primary development tool for many years.
+* [PyCharm](https://www.jetbrains.com/pycharm/) - Commercial Python IDE by JetBrains.
+  Has free community edition available. I use it only occasionally, but my
+  students use it often. Excellent value inspector in the debugger.
 
 ## Functional Programming
 
-* `itertools` from the standard library - Perhaps not strictly functional, but related. Wish that some of the generators given as cookbook recopies were actually implemented in the library. Complex problems often made simple through proper use of itertools.
+* `itertools` from the standard library - Hugely useful. Enables higher-level programming,
+  especially with collections and sequences.
+  Often makes complex problems simple.
+  Grouping, permutations, and different patterns of
+  processing are helped. Perhaps not strictly functional, but related.
+  Wish that some of the generators given as cookbook recopies were actually implemented
+  in the code.
+* [more-itertools](https://more-itertools.readthedocs.io/en/latest/api.html) - A project
+  that picks up where `itertools` leaves off. Implements the `itertools` recipes,
+  and provides a whole range of other patterns. Need a random permutation?
+  A list flattener? Iterleaved iteration? It's got it!
 * [funcy](https://github.com/Suor/funcy) - A fancy and practical functional tools.
 * [Toolz](https://github.com/pytoolz/toolz) - A collection of functional utilities for iterators, functions, and dictionaries.
 
@@ -101,7 +134,7 @@ Use an IDE, okay?
 
 * [lxml](http://lxml.de/) - Fast, versatile, powerful library for parsing and manipulating HTML and XML. Uses ElementTree API. Excellent XPath implementation. Very extensible.
 
-* Perl's XML::Twig - Sadly no direct Python equivalent.
+* Perl's XML::Twig - Sadly no direct Python equivalent. Yet.
 
 ## HTTP
 
@@ -114,12 +147,44 @@ Use an IDE, okay?
 
 ## Implementations
 
-* Python 3, not Python 2. It's time to migrate whole-heartedly. I have long supported Python 3 in my modules and with my students, but still often reached for the familiar  2.7 for my own work. No longer. Python 3.6 (released December 2016) is now the place to go if you have any choice in the matter. In addition to the superior handling of modern Unicode text (which is everywhere in a global economy) and other 'standard' features of Python 3, 3.6 adds template strings and orders `dict` keys, fixing ugly "Why?! Why does Python not do this yet?!" glitches. 3.6 is both the Python 3 we need and the Python 3 we deserve.
-* CPython, aka the standard, C-based implementation of Python you'd get from [python.org](https://www.python.org/) and other source. The Gold Standard and generally best place to run Python code.
-* [Jython](https://hg.python.org/jython) - Implementation of Python programming language written in Java for the Java virtual machine (JVM). I used to test all my libraries against Jython and to be hopeful for a JVM-resident Python, but my hopes for it have dimmed over time. Development is slow and the versions are back-level vs. standard CPython. It also doesn't easily support C-implemented libraries like `lxml` and `numpy` which are essential to much of my code. The standard execution environment now seems to be Linux-in-the-cloud, not JVM. Time marches on. Still, love it as an old fling.
-* [PyPy](https://bitbucket.org/pypy/pypy) - Accelerated JIT implementation of Python. Good currency with CPython. I test and certify all my code against PyPy, and occasionally use it when CPython isn't fast enough.
+* Python 3, not Python 2. It's time to migrate whole-heartedly.
 
+  Like many, I was laggardly in making the switch. Even after Python 3
+  started getting good (3.3 timeframe, IMO), there just wasn't enough positive reason to
+  make the jump, considering how good Python 2.7 was, how often it was the default version,
+  and general inertia. But those days are over. Python 3.{3,4,5} are increasingly good,
+  and 3.6 is truly excellent.
 
+  I have long supported Python 3 in my modules and with my students, but still often r
+  eached for the familiar  2.7 for my own work. No longer. Python 3.6 (released
+  December 2016) is now the place to go if you have any choice in the matter. In
+  addition to the superior handling of modern Unicode text (which is everywhere in a
+  global economy) and other 'standard' features of Python 3, 3.6 adds template strings
+  and orders `dict` keys, fixing ugly "Why?! Why does Python not do this yet?!" glitches.
+  3.6 is both the Python 3 we need and the Python 3 we deserve.
+
+  I have aliased `python` so it now runs 3.6, and `pip` == `pip3`.  Python 2.6 is the earliest
+  release I will support in any way. Both it and even 2.7 are now seen more in the rear-view
+  mirror than in daily use.
+
+* CPython, aka the standard, C-based implementation of Python you'd get from
+  [python.org](https://www.python.org/) and other source. The Gold Standard
+  and generally best place to run Python code.
+* [PyPy](https://bitbucket.org/pypy/pypy) - Accelerated JIT implementation of
+  Python. Good currency with CPython. I test and certify all my code against PyPy,
+  and occasionally use it when CPython isn't fast enough.
+* [Jython](https://hg.python.org/jython) - Implementation of Python programming
+  language written in Java for the Java virtual machine (JVM). I used to test
+  all my libraries against Jython and to be hopeful for a JVM-resident
+  Python, but my hopes for it have dimmed over time. Development is slow and the
+  versions are back-level vs. standard CPython. It also doesn't easily support
+  C-implemented libraries like `lxml` and `numpy` which are essential to much
+  of my code. The standard execution environment now seems to be Linux-in-the-cloud,
+  not JVM. Time marches on. Still, love it as an old fling.
+* Other implementations. I'll believe it when I see it. PyPy and Jython show how
+  entirely difficult it is to build and maintain a reall full-Python equivalent.
+  Small teams may make magic, but rarely on the scale and with the consistency and
+  speed required for core platforms.
 
 ## Interactive Interpreter
 
@@ -130,9 +195,13 @@ Use an IDE, okay?
 
 ## Package Management
 
-* `pip` - best way to install modules for Python. You can also use more platform- or distribution-specific tools such as `conda` (Anaconda distribution) or a local OS installer (e.g. `brew` on macOS, `apt-get` or `yum` on Linux). Avoid `easy_install`.
+* `pip` - best way to install modules for Python. You can also use more platform- or
+  distribution-specific tools such as `conda` (Anaconda distribution) or a local
+  OS installer (e.g. `brew` on macOS, `apt-get` or `yum` on Linux). Avoid
+  `easy_install`.
 
-* [wheel](http://pythonwheels.com/) - The new standard of Python distribution and are intended to replace eggs. All my packages are built for wheel distribution.
+* [wheel](http://pythonwheels.com/) - The new standard of Python distribution
+  and are intended to replace eggs. All my packages are built for wheel distribution.
 
 
 ## Specific Formats Processing
@@ -196,19 +265,35 @@ See also: [List of Python API Wrappers and Libraries](https://github.com/realpyt
     * [awesome-django](https://github.com/rosarior/awesome-django)
 
 * [Tornado](http://www.tornadoweb.org/en/latest/) - A Web framework and asynchronous networking library. Includes some of the core scheduling features usually implemented by nginx or other web servers. Strong foundation for highly async operations, e.g. WebSockets. Prefer to Twisted.
-* Avoid [Bottle](http://bottlepy.org/docs/dev/index.html), [CherryPy](http://www.cherrypy.org/), [Pyramid](http://www.pylonsproject.org/), [TurboGears](http://www.turbogears.org/), [Web2py](http://www.web2py.com/), Twisted. IMO, time has passed these by. I do not see the energy, community, or speed of development in these that I do in Flask, Django, and Tornado.
+* Avoid [Bottle](http://bottlepy.org/docs/dev/index.html),
+  [CherryPy](http://www.cherrypy.org/),
+  [Pyramid](http://www.pylonsproject.org/),
+  [TurboGears](http://www.turbogears.org/),
+  [Web2py](http://www.web2py.com/), Twisted.
+  IMO, time has passed these by. I do not see the energy, community, or speed of
+  development in these that I do in Flask, Django, and Tornado.
 
 # Services
 
 Online tools and APIs to simplify development.
 
-* [PyPI](https://pypi.python.org/pypi) - The Python Package Index. Where you go to get add-on modules for Python. `pip` installs directly from there.
-* [Github](https://github.com) - Leading provider of Git-based source code control and related services. The hub of many developers' online development identity and experience.
-* [Bitbucket](https://bitbucket.org) - Alternative provider of Git and Mercurial (Hg) online repositories.
+* [PyPI](https://pypi.python.org/pypi) - The Python Package Index. Where
+  you go to get add-on modules for Python. `pip` installs directly from there.
+* [Github](https://github.com) - Leading provider of Git-based source code
+  control and related services. The hub of many developers' online development
+  identity and experience.
+* [Bitbucket](https://bitbucket.org) - Alternative provider of Git and Mercurial (Hg)
+  online repositories. I have really loved using Mercurial, and have preferred it to
+  Git. But truth be told, Github is outpacing Bitbucket by a very large distance.
+  Even Python itself has made the switch to Git and Github.
 
 ## Continuous Integration
 
 *See also: [awesome-CIandCD](https://github.com/ciandcd/awesome-ciandcd#online-build-system).*
 
-* [CircleCI](https://circleci.com/) - A CI service that can run very fast parallel testing.
-* [Travis CI](https://travis-ci.org) - Popular CI service. Works well with open source  projects. (GitHub only)
+* [Travis CI](https://travis-ci.org) - Popular CI service. Works well with open source
+  projects. (GitHub only). Most of my Python open source projects are Travis CI
+  tested. They are a little slow updating the latest versions (esp of PyPy!), but
+  generally very solid and rapid.
+* [CircleCI](https://circleci.com/) - A CI service that can run very fast parallel
+  testing.
